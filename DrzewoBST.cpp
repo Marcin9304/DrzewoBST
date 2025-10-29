@@ -83,3 +83,12 @@ void DrzewoBST::wyswietlPostorderPomocnicza(Wezel* wezel) {
         std::cout << wezel->wartosc << " ";     // 3. OdwiedŸ korzeñ
     }
 }
+
+void DrzewoBST::usunCaleDrzewoPomocnicza(Wezel* wezel) {
+    // Przechodzimy drzewo metod¹ postorder, aby najpierw usun¹æ dzieci, a potem rodzica.
+    if (wezel != nullptr) {
+        usunCaleDrzewoPomocnicza(wezel->lewy);
+        usunCaleDrzewoPomocnicza(wezel->prawy);
+        delete wezel; // Zwolnienie pamiêci po wêŸle
+    }
+}
