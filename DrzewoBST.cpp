@@ -60,3 +60,26 @@ Wezel* DrzewoBST::dodajElementPomocnicza(Wezel* wezel, int wartosc) {
 
     return wezel; // Zwracamy wskaünik na wÍze≥ (niezmieniony).
 }
+void DrzewoBST::wyswietlInorderPomocnicza(Wezel* wezel) {
+    if (wezel != nullptr) {
+        wyswietlInorderPomocnicza(wezel->lewy);  // 1. Zejdü do lewego poddrzewa
+        std::cout << wezel->wartosc << " ";    // 2. Odwiedü korzeÒ
+        wyswietlInorderPomocnicza(wezel->prawy); // 3. Zejdü do prawego poddrzewa
+    }
+}
+
+void DrzewoBST::wyswietlPreorderPomocnicza(Wezel* wezel) {
+    if (wezel != nullptr) {
+        std::cout << wezel->wartosc << " ";     // 1. Odwiedü korzeÒ
+        wyswietlPreorderPomocnicza(wezel->lewy);  // 2. Zejdü do lewego poddrzewa
+        wyswietlPreorderPomocnicza(wezel->prawy); // 3. Zejdü do prawego poddrzewa
+    }
+}
+
+void DrzewoBST::wyswietlPostorderPomocnicza(Wezel* wezel) {
+    if (wezel != nullptr) {
+        wyswietlPostorderPomocnicza(wezel->lewy);  // 1. Zejdü do lewego poddrzewa
+        wyswietlPostorderPomocnicza(wezel->prawy); // 2. Zejdü do prawego poddrzewa
+        std::cout << wezel->wartosc << " ";     // 3. Odwiedü korzeÒ
+    }
+}
