@@ -34,6 +34,7 @@ struct Wezel {
  * inorder, preorder i postorder. Zarz¹dza pamiêci¹ w sposób automatyczny.
  */
 class DrzewoBST {
+    friend class MenedzerPlikow;
 private:
     Wezel* korzen; ///< WskaŸnik na korzeñ drzewa.
 
@@ -104,5 +105,4 @@ public:
     void wyswietlPostorder();
 };
 
-#endif // DRZEWOBST_H
 #endif // DRZEWOBST_H
