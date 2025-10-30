@@ -76,9 +76,30 @@ void MenedzerPlikow::zapiszDoPlikuBinarnego(DrzewoBST& drzewo, const std::string
 }
 
 bool MenedzerPlikow::wczytajZPlikuBinarnego(DrzewoBST& drzewo, const std::string& nazwaPliku) {
-    std::cout << "Funkcja 'wczytajZPlikuBinarnego' nie zostala jeszcze zaimplementowana." << std::endl;
-    // Tê funkcjê zaimplementujemy w nastêpnych etapach
-    return false;
+
+    // Otwieramy plik do CZYTANIA (ifstream) w trybie BINARNYM (std::ios::binary)
+    std::ifstream plik(nazwaPliku, std::ios::binary);
+
+    if (!plik.is_open()) {
+        std::cerr << "Blad! Nie mozna otworzyc pliku do odczytu binarnego: " << nazwaPliku << std::endl;
+        return false;
+    }
+
+    std::cout << "Rozpoczynam odczyt binarny z pliku '" << nazwaPliku << "'..." << std::endl;
+
+    // --- KRYTYCZNA SEKCJA ---
+    // 1. Usuwamy stare drzewo, aby unikn¹æ wycieku pamiêci.
+    //    Mo¿emy wywo³aæ prywatn¹ metodê kolegi, bo jesteœmy 'friend'.
+    //    (Zak³adamy, ¿e kolega poprawnie zaimplementowa³ tê funkcjê)
+    drzewo.usunCaleDrzewoPomocnicza(drzewo.korzen);
+
+    // 2. Rozpoczynamy rekurencyjn¹ odbudowê drzewa i ustawiamy nowy korzeñ.
+    drzewo.korzen = wczytajWezelBinarne(plik);
+    // --- Koniec sekcji krytycznej ---
+
+    plik.close();
+    std::cout << "Zakonczono odczyt binarny." << std::endl;
+    return true;
 }
 
 void MenedzerPlikow::zapiszWezelBinarne(std::ofstream& plik, Wezel* wezel) {
@@ -104,6 +125,27 @@ void MenedzerPlikow::zapiszWezelBinarne(std::ofstream& plik, Wezel* wezel) {
 
 
 Wezel* MenedzerPlikow::wczytajWezelBinarne(std::ifstream& plik) {
-    // Implementacja póŸniej
-    return nullptr;
+    char znacznik;
+    // Odczytaj 1-bajtowy znacznik ('0' lub '1')
+    plik.read(&znacznik, sizeof(znacznik));
+
+    // Jeœli plik siê skoñczy³ lub znacznik to '0' (nullptr), zakoñcz ga³¹Ÿ
+    if (plik.eof() || znacznik == 0) {
+        return nullptr;
+    }
+
+    // Jeœli znacznik to '1', wêze³ istnieje
+    int wartosc;
+    // Odczytaj binarnie wartoœæ wêz³a (int)
+    plik.read(reinterpret_cast<char*>(&wartosc), sizeof(wartosc));
+
+    // Stwórz nowy wêze³ z t¹ wartoœci¹
+    Wezel* nowyWezel = new Wezel(wartosc);
+
+    // Rekurencyjnie odbuduj lewe i prawe poddrzewo
+    nowyWezel->lewy = wczytajWezelBinarne(plik);
+    nowyWezel->prawy = wczytajWezelBinarne(plik);
+
+    // Zwróæ gotowy wêze³
+    return nowyWezel;
 }
