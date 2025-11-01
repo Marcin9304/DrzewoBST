@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:ObslugaPlikow.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\ObslugaPlikow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:ObslugaPlikow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\DrzewoBST.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -19,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:DrzewoBST.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\ObslugaPlikow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FFAD7E49-DC84-4AF7-AC7A-F721C8C50769}|BrzewoBST.vcxproj|solutionrelative:ObslugaPlikow.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ObslugaPlikow.h",
               "DocumentMoniker": "C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\ObslugaPlikow.h",
               "RelativeDocumentMoniker": "ObslugaPlikow.h",
@@ -86,13 +86,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "C:\\Users\\marci\\OneDrive\\Pulpit\\Studia\\2ROK,1SEMESTR\\Programowanie zaawansowane\\DrzewoBST\\BrzewoBST\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-29T21:44:14.063Z",
               "EditorCaption": ""

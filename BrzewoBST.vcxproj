@@ -125,11 +125,11 @@
   <ItemGroup>
     <ClCompile Include="DrzewoBST.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ObslugaPlikow.cpp" />
+    <ClCompile Include="MenedzerPlikow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrzewoBST.h" />
-    <ClInclude Include="ObslugaPlikow.h" />
+    <ClInclude Include="MenedzerPlikow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

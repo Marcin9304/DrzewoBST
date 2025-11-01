@@ -21,7 +21,7 @@
     <ClCompile Include="DrzewoBST.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="ObslugaPlikow.cpp">
+    <ClCompile Include="MenedzerPlikow.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +29,7 @@
     <ClInclude Include="DrzewoBST.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="ObslugaPlikow.h">
+    <ClInclude Include="MenedzerPlikow.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
