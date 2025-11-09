@@ -146,6 +146,6 @@ Wezel* MenedzerPlikow::wczytajWezelBinarne(std::ifstream& plik) {
     nowyWezel->lewy = wczytajWezelBinarne(plik);
     nowyWezel->prawy = wczytajWezelBinarne(plik);
 
-    // Zwroc gotowy wezel Test konfliktu 6b
+    // Zwraca gotowy wezel
     return nowyWezel;
 }
