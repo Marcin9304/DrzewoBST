@@ -171,5 +171,5 @@ int main() {
         }
     }
 
-    return 0; // Zakonczenie programu. KONFLIKT-TEST-4
+    return 0; // Zakonczenie programu. KONFLIKT-TEST-4b
 }
