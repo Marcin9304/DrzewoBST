@@ -74,7 +74,8 @@ private:
 
 public:
     /**
-     @brief Konstruktor domyslny.
+
+     * @brief Konstruktor domyslny. Ustawia korzen na nullptr.
      */
     DrzewoBST();
 
