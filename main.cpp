@@ -173,5 +173,5 @@ int main() {
         }
     }
 
-    return 0; // Zakonczenie programu
+    return 0; // Koniec programu
 }
