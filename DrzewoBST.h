@@ -74,7 +74,7 @@ private:
 
 public:
     /**
-     * @brief Konstruktor domyslny. Inicjalizuje puste drzewo.
+     @brief Konstruktor domyslny.
      */
     DrzewoBST();
 
