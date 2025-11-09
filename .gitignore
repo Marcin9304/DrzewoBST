@@ -1,1 +1,10 @@
+# Pliki i foldery cache Visual Studio
 /.vs/
+*.suo
+*.user
+*.vc.db
+*.ipch/
+
+# Foldery buildów (kompilacji)
+[Bb]in/
+[Oo]bj/
