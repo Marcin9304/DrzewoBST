@@ -23,7 +23,7 @@ void DrzewoBST::dodajElement(int wartosc) {
 }
 
 void DrzewoBST::wyswietlInorder() {
-    std::cout << "Drzewo (INORDER): ";
+    std::cout << "Wyswietlam drzewo (inorder): ";
     wyswietlInorderPomocnicza(korzen);
     std::cout << std::endl;
 }
