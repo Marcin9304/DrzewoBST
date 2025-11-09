@@ -1,6 +1,6 @@
 /**
  * @file DrzewoBST.cpp
- * @brief Plik Ÿród³owy z implementacj¹ metod klasy DrzewoBST.
+ * @brief Plik zrod³owy z implementacja metod klasy DrzewoBST.
  */
 
 #include "DrzewoBST.h"
@@ -9,11 +9,11 @@
  // --- Konstruktor i Destruktor ---
 
 DrzewoBST::DrzewoBST() {
-    korzen = nullptr; // Na pocz¹tku drzewo jest puste, wiêc korzeñ wskazuje na nic.
+    korzen = nullptr; // Na pocz¹tku drzewo jest puste, wiêc korzen wskazuje na nic.
 }
 
 DrzewoBST::~DrzewoBST() {
-    usunCaleDrzewoPomocnicza(korzen); // Wywo³ujemy funkcjê czyszcz¹c¹ ca³¹ pamiêæ.
+    usunCaleDrzewoPomocnicza(korzen); // Wywo³ujemy funkcjê czyszczaca ca³¹ pamiêc.
 }
 
 // --- Metody publiczne (interfejs dla u¿ytkownika) ---
@@ -43,22 +43,22 @@ void DrzewoBST::wyswietlPostorder() {
 // --- Metody prywatne (wewnêtrzna logika klasy) ---
 
 Wezel* DrzewoBST::dodajElementPomocnicza(Wezel* wezel, int wartosc) {
-    // Warunek bazowy rekurencji: jeœli dotarliœmy do pustego miejsca (liœcia),
-    // tworzymy tu nowy wêze³ i zwracamy jego adres.
+    // Warunek bazowy rekurencji: jeœli dotarlismy do pustego miejsca (liscia),
+    // tworzymy tu nowy wezel i zwracamy jego adres.
     if (wezel == nullptr) {
         return new Wezel(wartosc);
     }
 
-    // Krok rekurencyjny: decydujemy, czy iœæ do lewego, czy prawego poddrzewa.
+    // Krok rekurencyjny: decydujemy, czy isc do lewego, czy prawego poddrzewa.
     if (wartosc < wezel->wartosc) {
         wezel->lewy = dodajElementPomocnicza(wezel->lewy, wartosc);
     }
     else if (wartosc > wezel->wartosc) {
         wezel->prawy = dodajElementPomocnicza(wezel->prawy, wartosc);
     }
-    // Jeœli wartoœæ ju¿ istnieje w drzewie, nic nie robimy.
+    // Jeœli wartosc juz istnieje w drzewie, nic nie robimy.
 
-    return wezel; // Zwracamy wskaŸnik na wêze³ (niezmieniony).
+    return wezel; // Zwracamy wskaznik na wezel (niezmieniony).
 }
 void DrzewoBST::wyswietlInorderPomocnicza(Wezel* wezel) {
     if (wezel != nullptr) {

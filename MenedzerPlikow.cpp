@@ -7,7 +7,7 @@
 #include "DrzewoBST.h"
 
 /**
- * @brief Konstruktor domyœlny.
+ * @brief Konstruktor domyslny.
  */
 MenedzerPlikow::MenedzerPlikow() {
     // Na razie nic tu nie potrzebujemy
@@ -22,10 +22,10 @@ MenedzerPlikow::MenedzerPlikow() {
  */
 bool MenedzerPlikow::wczytajZPlikuTekstowego(DrzewoBST& drzewo, const std::string& nazwaPliku) {
 
-    // Otwieramy strumieñ pliku do CZYTANIA (ifstream = input file stream)
+    // Otwieramy strumien pliku do CZYTANIA (ifstream = input file stream)
     std::ifstream plik(nazwaPliku);
 
-    // Zawsze sprawdzaj, czy plik siê otworzy³!
+    // Zawsze sprawdzaj, czy plik siê otworzyl!
     if (!plik.is_open()) {
         std::cerr << "Blad! Nie mozna otworzyc pliku: " << nazwaPliku << std::endl;
         return false;
@@ -34,10 +34,10 @@ bool MenedzerPlikow::wczytajZPlikuTekstowego(DrzewoBST& drzewo, const std::strin
     int wartosc;
     std::cout << "Wczytywanie danych z pliku '" << nazwaPliku << "'..." << std::endl;
 
-    // Pêtla 'while (plik >> wartosc)' bêdzie dzia³aæ tak d³ugo,
-    // jak d³ugo uda siê wczytaæ kolejn¹ liczbê (int) z pliku.
+    // Petla 'while (plik >> wartosc)' bedzie dzialac tak dlugo,
+    // jak dlugo uda siê wczytac kolejna liczbe (int) z pliku.
     while (plik >> wartosc) {
-        // U¿ywamy publicznej metody z klasy kolegi, aby dodaæ element
+        // Uzywamy publicznej metody z klasy kolegi, aby dodac element
         drzewo.dodajElement(wartosc);
     }
 
@@ -50,14 +50,14 @@ bool MenedzerPlikow::wczytajZPlikuTekstowego(DrzewoBST& drzewo, const std::strin
 
 
 // -----------------------------------------------------------------
-//  ZAŒLEPKI (STUBS) DLA POZOSTA£YCH METOD
-//  (Musz¹ tu byæ, aby program siê skompilowa³)
+//  ZASLEPKI (STUBS) DLA POZOSTALYCH METOD
+//  (Musza tu byc, aby program siê skompilowa³)
 // -----------------------------------------------------------------
 
 
 void MenedzerPlikow::zapiszDoPlikuBinarnego(DrzewoBST& drzewo, const std::string& nazwaPliku) {
 
-    // Otwieramy strumieñ pliku do ZAPISU (ofstream) 
+    // Otwieramy strumien pliku do ZAPISU (ofstream) 
     // i w trybie BINARNYM (std::ios::binary)
     std::ofstream plik(nazwaPliku, std::ios::binary);
 
@@ -68,7 +68,7 @@ void MenedzerPlikow::zapiszDoPlikuBinarnego(DrzewoBST& drzewo, const std::string
 
     std::cout << "Rozpoczynam zapis binarny do pliku '" << nazwaPliku << "'..." << std::endl;
 
-    // Dziêki 'friend class' mo¿emy teraz bezpiecznie odwo³aæ siê do korzenia
+    // Dzieki 'friend class' mozemy teraz bezpiecznie odwolac sie do korzenia
     zapiszWezelBinarne(plik, drzewo.korzen);
 
     plik.close();
@@ -88,12 +88,12 @@ bool MenedzerPlikow::wczytajZPlikuBinarnego(DrzewoBST& drzewo, const std::string
     std::cout << "Rozpoczynam odczyt binarny z pliku '" << nazwaPliku << "'..." << std::endl;
 
     // --- KRYTYCZNA SEKCJA ---
-    // 1. Usuwamy stare drzewo, aby unikn¹æ wycieku pamiêci.
-    //    Mo¿emy wywo³aæ prywatn¹ metodê kolegi, bo jesteœmy 'friend'.
-    //    (Zak³adamy, ¿e kolega poprawnie zaimplementowa³ tê funkcjê)
+    // 1. Usuwamy stare drzewo, aby uniknac wycieku pamiêci.
+    //    Mo¿emy wywo³ac prywatna metode kolegi, bo jestesmy 'friend'.
+    
     drzewo.usunCaleDrzewoPomocnicza(drzewo.korzen);
 
-    // 2. Rozpoczynamy rekurencyjn¹ odbudowê drzewa i ustawiamy nowy korzeñ.
+    // 2. Rozpoczynamy rekurencyjna odbudowe drzewa i ustawiamy nowy korzen.
     drzewo.korzen = wczytajWezelBinarne(plik);
     // --- Koniec sekcji krytycznej ---
 
@@ -104,16 +104,16 @@ bool MenedzerPlikow::wczytajZPlikuBinarnego(DrzewoBST& drzewo, const std::string
 
 void MenedzerPlikow::zapiszWezelBinarne(std::ofstream& plik, Wezel* wezel) {
     if (wezel == nullptr) {
-        // Zapisz '0' (jako char), aby oznaczyæ brak wêz³a (nullptr)
+        // Zapisz '0' (jako char), aby oznaczyc brak wezla (nullptr)
         char znacznik = 0;
         plik.write(&znacznik, sizeof(znacznik));
     }
     else {
-        // Zapisz '1' (jako char), aby oznaczyæ istnienie wêz³a
+        // Zapisz '1' (jako char), aby oznaczyc istnienie wezla
         char znacznik = 1;
         plik.write(&znacznik, sizeof(znacznik));
 
-        // Zapisz W£AŒCIW¥ wartoœæ wêz³a (binarnie)
+        // Zapisz WLASCIWA wartoœæ wezla (binarnie)
         // reinterpret_cast jest konieczny przy zapisie binarnym
         plik.write(reinterpret_cast<const char*>(&wezel->wartosc), sizeof(wezel->wartosc));
 
@@ -129,23 +129,23 @@ Wezel* MenedzerPlikow::wczytajWezelBinarne(std::ifstream& plik) {
     // Odczytaj 1-bajtowy znacznik ('0' lub '1')
     plik.read(&znacznik, sizeof(znacznik));
 
-    // Jeœli plik siê skoñczy³ lub znacznik to '0' (nullptr), zakoñcz ga³¹Ÿ
+    // Jesli plik siê skonczy³ lub znacznik to '0' (nullptr), zakoncz galaz
     if (plik.eof() || znacznik == 0) {
         return nullptr;
     }
 
-    // Jeœli znacznik to '1', wêze³ istnieje
+    // Jeœli znacznik to '1', wezel istnieje
     int wartosc;
-    // Odczytaj binarnie wartoœæ wêz³a (int)
+    // Odczytaj binarnie wartosc wezla (int)
     plik.read(reinterpret_cast<char*>(&wartosc), sizeof(wartosc));
 
-    // Stwórz nowy wêze³ z t¹ wartoœci¹
+    // Stwórz nowy wezel z ta wartoscia
     Wezel* nowyWezel = new Wezel(wartosc);
 
     // Rekurencyjnie odbuduj lewe i prawe poddrzewo
     nowyWezel->lewy = wczytajWezelBinarne(plik);
     nowyWezel->prawy = wczytajWezelBinarne(plik);
 
-    // Zwróæ gotowy wêze³
+    // Zwroc gotowy wezel
     return nowyWezel;
 }

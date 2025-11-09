@@ -6,7 +6,7 @@
 #include "MenedzerPlikow.h" // Do³¹czamy klasê mened¿era plików
 
 /**
- * @brief Funkcja pomocnicza do wyœwietlania menu g³ównego.
+ * @brief Funkcja pomocnicza do wyswietlania menu glownego.
  */
 void wyswietlMenu() {
     std::cout << "\n--- MENU GLOWNE DRZEWA BST ---" << std::endl;
@@ -23,8 +23,8 @@ void wyswietlMenu() {
 }
 
 /**
- * @brief Funkcja pomocnicza do obs³ugi pod-menu wyœwietlania.
- * @param drzewo Referencja do drzewa, które ma byæ wyœwietlone.
+ * @brief Funkcja pomocnicza do obs³ugi pod-menu wyswietlania.
+ * @param drzewo Referencja do drzewa, ktore ma byc wyswietlone.
  */
 void obsluzWyswietlanie(DrzewoBST& drzewo) {
     int wybor;
@@ -55,10 +55,10 @@ void obsluzWyswietlanie(DrzewoBST& drzewo) {
 }
 
 /**
- * @brief G³ówna funkcja programu (main).
+ * @brief G³owna funkcja programu (main).
  */
 int main() {
-    // Tworzymy obiekty, na których bêdziemy pracowaæ
+    // Tworzymy obiekty, na ktorych bêdziemy pracowac
     DrzewoBST drzewo;
     MenedzerPlikow menedzer;
 
@@ -69,12 +69,12 @@ int main() {
         wyswietlMenu();
         std::cin >> wybor;
 
-        // Prosta obs³uga b³êdu, gdy ktoœ wpisze literê zamiast liczby
+        // Prosta obsluga bledu, gdy ktos wpisze literê zamiast liczby
         if (std::cin.fail()) {
             std::cout << "Blad! Wprowadzono nie-liczbe. Sprobuj ponownie." << std::endl;
-            std::cin.clear(); // Czyszczenie flagi b³êdu
+            std::cin.clear(); // Czyszczenie flagi bledu
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            continue; // Pomiñ resztê pêtli i wyœwietl menu ponownie
+            continue; // Pomin reszte petli i wyswietl menu ponownie
         }
 
         switch (wybor) {
@@ -86,34 +86,33 @@ int main() {
             std::cout << "Dodano " << wartosc << std::endl;
             break;
         }
-        case 2: // Wyœwietl drzewo
+        case 2: // Wyswietl drzewo
             obsluzWyswietlanie(drzewo);
             break;
 
         case 3: // Szukaj drogi
             std::cout << "Opcja 'Szukaj drogi' - do zaimplementowania." << std::endl;
-            // Tê funkcjê musicie jeszcze dopisaæ w DrzewoBST.h i .cpp
-            // a nastêpnie tutaj j¹ wywo³aæ.
+            // Te funkcje musimy jeszcze dopisac w DrzewoBST.h i .cpp
+            // a nastêpnie tutaj ja wywo³ac.
             break;
 
-            // --- FUNKCJE MENED¯ERA PLIKÓW ---
+            // --- FUNKCJE MENEDZERA PLIKOW ---
 
         case 4: { // Zapisz tekstowo
             std::string nazwaPliku;
             std::cout << "Podaj nazwe pliku tekstowego (np. drzewo.txt): ";
             std::cin >> nazwaPliku;
-            // Ta funkcja nie by³a czêœci¹ Twoich zadañ, ale powinna
-            // zostaæ dodana do MenedzerPlikow, jeœli jest wymagana
+            
             std::cout << "Opcja 'Zapisz tekstowo' - do zaimplementowania." << std::endl;
             // menedzer.zapiszDoPlikuTekstowego(drzewo, nazwaPliku);
             break;
         }
         case 5: { // Zapisz binarnie
-            std::string nazwaPliku = "drzewo.bts"; // Domyœlna nazwa
+            std::string nazwaPliku = "drzewo.bts"; // Domyslna nazwa
             std::cout << "Podaj nazwe pliku binarnego (domyslnie: drzewo.bts): ";
             std::cin.ignore(); // Zjedz znak nowej linii po wczytaniu liczby
-            std::getline(std::cin, nazwaPliku); // Pozwól na wpisanie nazwy
-            if (nazwaPliku.empty()) nazwaPliku = "drzewo.bts"; // U¿yj domyœlnej, jeœli pusto
+            std::getline(std::cin, nazwaPliku); // Pozwol na wpisanie nazwy
+            if (nazwaPliku.empty()) nazwaPliku = "drzewo.bts"; // Uzyj domyslnej, jesli pusto
 
             menedzer.zapiszDoPlikuBinarnego(drzewo, nazwaPliku);
             break;
@@ -132,7 +131,7 @@ int main() {
             break;
         }
         case 7: { // Wczytaj binarnie
-            std::string nazwaPliku = "drzewo.bts"; // Domyœlna nazwa
+            std::string nazwaPliku = "drzewo.bts"; // Domyslna nazwa
             std::cout << "Podaj nazwe pliku binarnego do wczytania (domyslnie: drzewo.bts): ";
             std::cin.ignore(); // Zjedz znak nowej linii
             std::getline(std::cin, nazwaPliku);
@@ -146,23 +145,23 @@ int main() {
             }
             break;
         }
-        case 8: { // Usuñ ca³e drzewo
+        case 8: { // Usun ca³e drzewo
             std::cout << "Usuwanie calego drzewa..." << std::endl;
             // Tworzymy nowe, puste drzewo i podmieniamy je ze starym
             // Stare drzewo (w obiekcie 'drzewo') zostanie automatycznie
-            // usuniête przez swój destruktor (który wywo³a usunCaleDrzewoPomocnicza)
+            // usuniete przez swoj destruktor (ktory wywo³a usunCaleDrzewoPomocnicza)
             DrzewoBST pusteDrzewo;
-            // U¿ywamy std::swap, aby podmieniæ zawartoœæ
+            // Uzywamy std::swap, aby podmienic zawartosc
             // std::swap(drzewo, pusteDrzewo); // To wymaga³oby operatora= lub copy ctor
 
             // Prostsza metoda: po prostu wywo³aj wczytanie z nieistniej¹cego pliku
             // binarnego, które i tak czyœci drzewo.
-            // ...albo po prostu zrób nowe drzewo:
-            drzewo = DrzewoBST(); // Zak³adaj¹c, ¿e destruktor starego drzewa dobrze zwalnia pamiêæ
+            // ...albo po prostu zrob nowe drzewo:
+            drzewo = DrzewoBST(); // Zakladajac, ¿e destruktor starego drzewa dobrze zwalnia pamiêc
             std::cout << "Drzewo zostalo wyczyszczone." << std::endl;
             break;
         }
-        case 0: // Zakoñcz program
+        case 0: // Zakoncz program
             dziala = false;
             std::cout << "Do widzenia!" << std::endl;
             break;
@@ -172,5 +171,5 @@ int main() {
         }
     }
 
-    return 0; // Zakoñczenie programu
+    return 0; // Zakonczenie programu
 }
