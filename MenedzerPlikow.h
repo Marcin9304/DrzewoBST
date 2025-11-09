@@ -8,7 +8,7 @@
 
 /**
  * @class MenedzerPlikow
- * @brief Klasa odpowiedzialna za operacje zapisu i odczytu drzewa BST do/z pliku.
+ * @brief Klasa do zapisu i odczytu drzewa BST do/z pliku.
  *
  * Implementuje zapis i odczyt binarny (.bts) oraz odczyt
  * z pliku tekstowego zawierajacego liczby.
