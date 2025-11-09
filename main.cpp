@@ -10,9 +10,7 @@
  */
 void wyswietlMenu() {
     std::cout << "\n--- MENU GLOWNE DRZEWA BST ---" << std::endl;
-
     std::cout << "1. Dodaj NOWY element" << std::endl;
-
     std::cout << "2. Wyswietl drzewo (Inorder, Preorder, Postorder)" << std::endl;
     std::cout << "3. Szukaj drogi do elementu" << std::endl;
     std::cout << "4. Zapisz drzewo do pliku (tekstowo)" << std::endl;
@@ -173,5 +171,5 @@ int main() {
         }
     }
 
-    return 0; // Zakonczenie programu
+    return 0; // Zakonczenie programu. KONFLIKT-TEST-4
 }
