@@ -8,7 +8,7 @@
 
 /**
  * @class MenedzerPlikow
-@brief Klasa zarzadzajaca plikami.
+ * @brief Klasa zarzadzajaca plikami.
  *
  * Implementuje zapis i odczyt binarny (.bts) oraz odczyt
  * z pliku tekstowego zawierajacego liczby.
